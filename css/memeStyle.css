@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    font-family: 'segoe ui';
+    background-color: #fcfcfc;
+}
+
+nav {
+    width: 100%;
+    background-color: #0fc9e7;
+    border-bottom: 10px solid #4756ca;
+    box-shadow: aqua;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+    padding: 6px;
+    padding-top: 14px;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    background-color: #0fc9e7;
+    display: inline;
+    font-size: 24px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fcfcfc;
+}
+
+.nav>.nav-links>a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+.generator {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imageEdit {
+    display: flex;
+    width: 30vw;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+footer {
+    /* position: absolute; */
+    margin-bottom: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(#fcfcfc 0%, #0fc9e7 50%);
+
+}
+
+@media (max-width:650px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+        margin: 10px;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 81px;
+        left: 0px;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+
+    .myCanvas {
+        margin: 0 auto;
+    }
+
+    .generator {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .imageEdit {
+        margin: 20px 8vw;
+        width: 84vw;
+    }
+}
