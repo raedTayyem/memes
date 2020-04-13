@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/memeStyle.css">
+    <title>Document</title>
+</head>
+
+<body onload="onInit()">
+    <img src="" alt="" >
+    <nav>
+        <section class="nav container">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-title">
+                    <img src="icon/Logo.png" alt="">
+                </div>
+            </div>
+
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="nav-links">
+                <a href="memeCreate.html" target="">Memes</a>
+                <a href="" target="">About</a>
+            </div>
+        </section>
+    </nav>
+
+    <section class="memeGallery container"> </section>
+
+    <section class="container generator">
+        <canvas class="myCanvas"></canvas>
+
+        <div class="imageEdit">
+
+            <div>
+                <label for="Highlight">Highlight</label>
+                <input type="checkbox" class="Highlight" onchange='onHighlight();' checked>
+                <input type="text" class="textChange">
+            </div>
+
+            <div class="lineControl">
+                <button class="increase" onclick="moveLines(-10)">↑</button>
+                <button class="decrease" onclick="moveLines(10)">↓</button>
+                <button class="decrease" onclick="switchLine()">⇅</button>
+                <button class="decrease" onclick="onAddLine()">+</button>
+                <button class="decrease" onclick="onDelete()">🗑️</button>
+            </div>
+
+            <div class="textControl">
+                <button class="decrease" onclick="textSize(-1)">A⁻</button>
+                <button class="increase" onclick="textSize(1)">A⁺</button>
+                <button class="decrease" onclick="alignLeft()">
+                    <img src="https://img.icons8.com/metro/26/000000/align-left.png" />
+                </button>
+                <button class="decrease" onclick="alignCenter()">
+                    <img src="https://img.icons8.com/metro/26/000000/align-center.png" />
+                </button>
+                <button class="decrease" onclick="alignRight()">
+                    <img src="https://img.icons8.com/metro/26/000000/align-right.png" />
+                </button>
+            </div>
+
+            <div class="publish">
+                <a id="download" download="canvas.png">
+                    <button type="button" onClick="onDownload()">Download</button>
+                </a>
+                <a class="share">
+                    <button type="button" onClick="fbUpload()">Share</button>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer></footer>
+
+    <script src="js/galleryController.js"></script>
+    <script src="js/galleryService.js"></script>
+    <script src="js/uploadService.js"></script>
+
+</body>
+
+</html>
